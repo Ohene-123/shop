@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+        .outer{
+            width: 50%;
+            height: 10px;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner{
+            width: 50%;
+            height: 10px;
+            background-color: white;
+            animation: slider 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes slider {
+            0% {
+                transform: translateX(-0px);
+            }
+            100% {
+                transform: translateX(1000px);
+            }
+        }
+        .box {
+            animation: slider 1.2s 0.3s ease-in-out infinite alternate;
+        }
+
+        .ball, .ball1 {
+            height: 30px;
+            width: 30px;
+            background-color: yellow;
+            margin-top: 100px;
+            animation: upanddown 0.1s 0.3s ease-in-out infinite alternate;
+        }
+        .ball1{
+            animation: upanddown 0.1s ease-in-out infinite alternate;
+        }
+        @keyframes upanddown {
+            0% {
+
+            }
+            100% {
+                transform: translateY(70px);
+            }
+        }
+</style>
+</head>
+<body>
+    <div>
+        <h1>Loading</h1>
+
+        <div class="outer">
+            <div class="inner"></div>
+        </div>
+
+        <div class="box" style="display: flex; gap: 1rem;">
+            <div class="ball"></div>
+        <div class="ball1"></div>
+        </div>
+
+    </div>
+</body>
+</html>
