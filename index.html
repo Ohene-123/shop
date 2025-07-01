@@ -1,29 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home</title>
-  <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-  <header>
-    <h1>SHOP AKUA</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="shop.html">Shop</a>
-      <a href="help.html">help</a>
-    </nav>
-  </header>
-  <main>
-    <div class="container">
-      <h2> <strong> welcome to shop akua</strong> </h2>
-      <P> We are thrilled to have you here! Whether you're looking to refresh your wadrobe,find the perfect outfit for a special occasion or simply get inspired by the latest trends , you've come to the right place </P>
-      <p>At Akua Products, we believe in turning ideas into impactful digital experiences. Whether you’re a startup or a growing business, we help you get where you want to be.</p>
-      <p> Happy shopping</p>
-    </div>
-  </main>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SHOP AKUA | Home</title>
+		<link rel="stylesheet" href="styles.css" />
+		<style>
+			.hero {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				align-items: center;
+				gap: 2rem;
+				padding: 4rem 2rem;
+				background: linear-gradient(to right, #000, #1a1a1a);
+			}
+
+			.hero-text {
+				max-width: 600px;
+			}
+
+			.hero-text h2 {
+				font-size: 2.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.hero-text p {
+				font-size: 1.2rem;
+				line-height: 1.6;
+			}
+
+			.cta-button {
+				display: inline-block;
+				margin-top: 1.5rem;
+				background: #ff4f4f;
+				color: #fff;
+				padding: 12px 24px;
+				text-decoration: none;
+				border-radius: 8px;
+				transition: background 0.3s ease;
+			}
+
+			.cta-button:hover {
+				background: #e03e3e;
+			}
+
+			.hero img {
+				width: 100%;
+				border-radius: 16px;
+				max-height: 400px;
+				object-fit: cover;
+			}
+
+			.features {
+				padding: 3rem 2rem;
+				background-color: #1c1c1c;
+				text-align: center;
+			}
+
+			.features h3 {
+				margin-bottom: 2rem;
+			}
+
+			.features-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+				gap: 2rem;
+			}
+
+			.feature-box {
+				background-color: #292929;
+				padding: 1.5rem;
+				border-radius: 12px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+			}
+
+			footer {
+				text-align: center;
+				padding: 1.5rem;
+				font-size: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<a href="index.html" class="title">
+				<h1>SHOP AKUA</h1>
+			</a>
+			<nav>
+				<a href="index.html">Home</a>
+				<a href="shop.html">Shop</a>
+				<a href="about.html">About</a>
+				<a href="contact.html">Contact</a>
+				<a href="help.html">Help</a>
+				<a href="cart.html" class="cart-link"
+					>🛒 Cart (<span id="cart-count">0</span>)</a
+				>
+			</nav>
+		</header>
+
+		<main>
+			<section class="hero">
+				<div class="hero-text">
+					<h2>Refresh Your Wardrobe with SHOP AKUA</h2>
+					<p>
+						Explore the trendiest collections and timeless pieces,
+						all curated for the bold and stylish. Affordable prices.
+						Fast delivery. No compromise on quality.
+					</p>
+					<a href="shop.html" class="cta-button">Shop Now</a>
+				</div>
+				<img src="pic3.jpg" alt="Fashion display" />
+			</section>
+
+			<section class="features">
+				<h3>Why Shop With Us?</h3>
+				<div class="features-grid">
+					<div class="feature-box">🚚 Fast Delivery</div>
+					<div class="feature-box">💳 Secure Payments</div>
+					<div class="feature-box">🛍️ Quality Products</div>
+					<div class="feature-box">📦 Easy Returns</div>
+				</div>
+			</section>
+		</main>
+
+		<footer>&copy; 2025 SHOP AKUA. All rights reserved.</footer>
+
+		<script src="cart.js"></script>
+	</body>
 </html>

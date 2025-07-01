@@ -1,57 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop</title>
-  <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-  <header>
-    <h1>SHOP AKUA</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="shop.html">Shop</a>
-      <a href="help.html">help</a>
-    </nav>
-  </header>
-  <main>
-    <div class="container">
-      <h2>Shop Our Products</h2>
-         <div class="product-grid">
-                  <!-- Product 1 -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shop - SHOP AKUA</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<style>
+			:root {
+				--bg: #0f0f0f;
+				--fg: #eaeaea;
+				--subtle: #999;
+				--primary: #ff385c;
+				--border: #2a2a2a;
+			}
 
-        <div class="product-card">
-          <img src="htmlvgfg.jpg" alt = "Product 1" />
-          <h3>Product Name 1</h3>
-          <p class="price">$19.99</p>
-          <button>Buy Now</button>
-        </div>
-        <!-- Product 2 -->
-        <div class="product-card">
-          <img src="html.jpg 3.webp" alt=" product 2">
-          <h3>Product Name 2</h3>
-          <p class="price">$24.99</p>
-          <button>Buy Now</button>
-        </div>
-        <!-- Product 3 -->
-        <div class="product-card">
-          <img src="html.jpg 4.webp" alt= "Product 3" />
-          <h3>Product Name 3</h3>
-          <p class="price">$15.00</p>
-          <button>Buy Now</button>
-        </div>
-        <!-- Product 4 -->
-        <div class="product-card">
-          <img src="html.jpg_2.webp" alt="Product 4" />
-          <h3>Product Name 4</h3>
-          <p class="price">$30.00</p>
-          <button>Buy Now</button>
-        </div>
-      </div>
-    </div>
-  </main>
-</body>
+			.main {
+				padding: 3rem 2rem;
+				max-width: 1200px;
+				margin: auto;
+			}
+
+			.shop-hero h2 {
+				font-size: 2.2rem;
+				margin-bottom: 0.3rem;
+				font-weight: 600;
+			}
+
+			.shop-hero p {
+				color: var(--subtle);
+				font-size: 1rem;
+				margin-bottom: 2rem;
+			}
+
+			.product-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+				gap: 2.5rem;
+			}
+
+			.product-card {
+				background: #171717;
+				border: 1px solid var(--border);
+				padding: 1rem;
+				text-align: left;
+				transition: border 0.2s ease;
+				cursor: pointer;
+			}
+
+			.product-card:hover {
+				border-color: var(--primary);
+			}
+
+			.product-card img {
+				width: 100%;
+				object-fit: cover;
+				margin-bottom: 1rem;
+				aspect-ratio: 1/1;
+			}
+
+			.product-card h3 {
+				font-size: 1.1rem;
+				font-weight: 600;
+				margin-bottom: 0.3rem;
+			}
+
+			.price {
+				color: var(--fg);
+				font-weight: 500;
+				font-size: 0.95rem;
+				margin-bottom: 0.8rem;
+			}
+
+			button {
+				background: var(--primary);
+				color: #fff;
+				padding: 0.5rem 1rem;
+				border: none;
+				font-weight: 600;
+				font-size: 0.85rem;
+				letter-spacing: 0.5px;
+				cursor: pointer;
+				text-transform: uppercase;
+			}
+
+			button:hover {
+				background: #e72f53;
+			}
+
+			.footer {
+				padding: 2rem;
+				text-align: center;
+				color: var(--subtle);
+				font-size: 0.75rem;
+				border-top: 1px solid var(--border);
+				margin-top: 3rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="header">
+			<a href="index.html" class="title">
+				<h1>SHOP AKUA</h1>
+			</a>
+			<nav class="nav">
+				<a href="index.html">Home</a>
+				<a href="shop.html">Shop</a>
+				<a href="about.html">About</a>
+				<a href="contact.html">Contact</a>
+				<a href="help.html">Help</a>
+				<a href="cart.html" class="cart-link"
+					>🛒 Cart (<span id="cart-count">0</span>)</a
+				>
+			</nav>
+		</header>
+
+		<main class="main">
+			<section class="shop-hero">
+				<h2>Explore Our Curated Collection</h2>
+				<p>
+					Hand-picked essentials and trending styles—crafted to
+					elevate your everyday.
+				</p>
+			</section>
+
+			<section class="product-grid">
+				<div class="product-card">
+					<img src="pic1.webp" alt="Polka Dot Dress" />
+					<h3>Polka Dot Dress</h3>
+					<p class="price">$19.99</p>
+					<button
+						onclick="addToCart('Polka Dot Dress', 19.99, 'pic1.webp')"
+					>
+						Add to Cart
+					</button>
+				</div>
+
+				<div class="product-card">
+					<img src="pic2.webp" alt="Lilac Bodycon Dress" />
+					<h3>Lilac Bodycon Dress</h3>
+					<p class="price">$24.99</p>
+					<button
+						onclick="addToCart('Lilac Bodycon Dress', 24.99, 'pic2.webp')"
+					>
+						Add to Cart
+					</button>
+				</div>
+
+				<div class="product-card">
+					<img src="pic3.jpg" alt="Boho Black Maxi Dress" />
+					<h3>Boho Black Maxi Dress</h3>
+					<p class="price">$15.00</p>
+					<button
+						onclick="addToCart('Boho Black Maxi Dress', 15.00, 'pic3.jpg')"
+					>
+						Add to Cart
+					</button>
+				</div>
+
+				<div class="product-card">
+					<img src="pic5.jpg" alt="Colorful African Print Dress" />
+					<h3>African Print Trio Set</h3>
+					<p class="price">$15.00</p>
+					<button
+						onclick="addToCart('African Print Trio Set', 15.00, 'pic5.jpg')"
+					>
+						Add to Cart
+					</button>
+				</div>
+
+				<div class="product-card">
+					<img src="pic6.jpg" alt="Kente Wrap Dress" />
+					<h3>Kente Wrap Dress</h3>
+					<p class="price">$15.00</p>
+					<button
+						onclick="addToCart('Kente Wrap Dress', 15.00, 'pic6.jpg')"
+					>
+						Add to Cart
+					</button>
+				</div>
+
+				<div class="product-card">
+					<img
+						src="store-clothesjpg.jpg"
+						alt="Store Rack Collection"
+					/>
+					<h3>Store Rack Collection</h3>
+					<p class="price">$15.00</p>
+					<button
+						onclick="addToCart('Store Rack Collection', 15.00, 'store-clothesjpg.jpg')"
+					>
+						Add to Cart
+					</button>
+				</div>
+
+				<div class="product-card">
+					<img src="pexels-photo-45982.jpeg" alt="Knitted Sweater" />
+					<h3>Knitted Sweater</h3>
+					<p class="price">$15.00</p>
+					<button
+						onclick="addToCart('Knitted Sweater', 15.00, 'pexels-photo-45982.jpeg')"
+					>
+						Add to Cart
+					</button>
+				</div>
+
+				<div class="product-card">
+					<img
+						src="nike-lunar-force-1jpeg.jpeg"
+						alt="Nike Lunar Force 1"
+					/>
+					<h3>Nike Lunar Force 1</h3>
+					<p class="price">$30.00</p>
+					<button
+						onclick="addToCart('Nike Lunar Force 1', 30.00, 'pic4.webp')"
+					>
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-card">
+					<img
+						src="omega-regulateur-mens-watch.jpg"
+						alt="Knitted Sweater"
+					/>
+					<h3>Omega Regulateur Mens Watch</h3>
+					<p class="price">$15.00</p>
+					<button
+						onclick="addToCart('Knitted Sweater', 15.00, 'omega-regulateur-mens-watch.jpg')"
+					>
+						Add to Cart
+					</button>
+				</div>
+
+				<div class="product-card">
+					<img src="pic4.webp" alt="Champagne Gown" />
+					<h3>Champagne Gown</h3>
+					<p class="price">$30.00</p>
+					<button
+						onclick="addToCart('Champagne Gown', 30.00, 'pic4.webp')"
+					>
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-card">
+					<img src="pexels-photo-45982.jpeg" alt="Knitted Sweater" />
+					<h3>Knitted Sweater</h3>
+					<p class="price">$15.00</p>
+					<button
+						onclick="addToCart('Knitted Sweater', 15.00, 'pexels-photo-45982.jpeg')"
+					>
+						Add to Cart
+					</button>
+				</div>
+
+				<div class="product-card">
+					<img src="pic4.webp" alt="Champagne Gown" />
+					<h3>Champagne Gown</h3>
+					<p class="price">$30.00</p>
+					<button
+						onclick="addToCart('Champagne Gown', 30.00, 'pic4.webp')"
+					>
+						Add to Cart
+					</button>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			&copy; 2025 SHOP AKUA. All rights reserved.
+		</footer>
+
+		<script src="cart.js"></script>
+		<div id="toast" class="toast">✔️ Item added to cart</div>
+	</body>
 </html>

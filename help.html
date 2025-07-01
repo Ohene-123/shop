@@ -1,37 +1,154 @@
 <!DOCTYPE html>
-<html lang="e">
-    <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home</title>
-  <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-  <header>
-    <h1>SHOP AKUA</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="shop.html">Shop</a>
-      <a href="help.html">help</a>
-    </nav>
-  </header>
-  <main>
-    <div class="container">
-      <h2> <strong> WELCOME TO OUR HELP CENTER</h2>
-      <P> We're here to make your shopping experience easy and enjoyable</P>
-      <p>Whether you need help with sizing, orders, shipping,returns,or just have a quick question,you'll find all the answers right there</p>
-      <p> If you can't find what you're looking for ,feel free to reach out , we're always happy to help!</p>
-      <p><strong>Customer Support Hours:</strong> </p>
-      <p>Monday-Friday, 9 AM - 6PM </p>
-      <p> You Can reach us on our <strong> Contact Us </strong></p>
-      <p>Thank you for choosing SHOP AKUA </p>
-      <p> We Appreciate You </p>
-    </div>
-  </main>
-</body>
-</html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Help Center - SHOP AKUA</title>
+		<link rel="stylesheet" href="styles.css" />
+		<style>
+			main {
+				padding: 3rem 2rem;
+				max-width: 900px;
+				margin: 0 auto;
+			}
 
+			h2 {
+				font-size: 2rem;
+				margin-bottom: 1.5rem;
+				color: #f5f5f5;
+			}
 
-    
+			h3 {
+				margin-top: 2rem;
+				margin-bottom: 1rem;
+				font-size: 1.4rem;
+				color: #fff;
+			}
+
+			.faq-item {
+				border-top: 1px solid #333;
+				padding: 1rem 0;
+				cursor: pointer;
+			}
+
+			.faq-question {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				color: #eee;
+				font-weight: 500;
+			}
+
+			.faq-answer {
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.3s ease;
+				color: #ccc;
+				padding-left: 1rem;
+				font-size: 0.95rem;
+			}
+
+			.faq-item.open .faq-answer {
+				max-height: 200px;
+				margin-top: 0.5rem;
+			}
+
+			.arrow {
+				transition: transform 0.3s ease;
+			}
+
+			.faq-item.open .arrow {
+				transform: rotate(90deg);
+			}
+
+			a {
+				color: #ff4081;
+			}
+
+			strong {
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<a href="index.html" class="title">
+				<h1>SHOP AKUA</h1>
+			</a>
+			<nav>
+				<a href="index.html">Home</a>
+				<a href="shop.html">Shop</a>
+				<a href="about.html">About</a>
+				<a href="contact.html">Contact</a>
+				<a href="help.html">Help</a>
+				<a href="cart.html" class="cart-link"
+					>🛒 Cart (<span id="cart-count">0</span>)</a
+				>
+			</nav>
+		</header>
+
+		<main>
+			<h2>Welcome to Our Help Center</h2>
+			<p>
+				We're here to support you through every step of your shopping
+				journey. Whether you're tracking an order, making a return, or
+				just have questions, we’ve got you covered.
+			</p>
+
+			<h3>Frequently Asked Questions</h3>
+
+			<div class="faq-item">
+				<div class="faq-question">
+					<span>How do I track my order?</span>
+					<span class="arrow">▶</span>
+				</div>
+				<div class="faq-answer">
+					You can track your order via the confirmation email or by
+					logging into your
+					<a href="account.html">account page</a> and checking your
+					order status.
+				</div>
+			</div>
+
+			<div class="faq-item">
+				<div class="faq-question">
+					<span>What is your return policy?</span>
+					<span class="arrow">▶</span>
+				</div>
+				<div class="faq-answer">
+					We accept returns within 14 days of delivery. Items must be
+					unworn and in original packaging. Read our
+					<a href="returns.html">full return policy</a>.
+				</div>
+			</div>
+
+			<div class="faq-item">
+				<div class="faq-question">
+					<span>When will I get my refund?</span>
+					<span class="arrow">▶</span>
+				</div>
+				<div class="faq-answer">
+					Refunds are processed within 5–7 business days after the
+					return is received and approved.
+				</div>
+			</div>
+
+			<h3>Support Hours</h3>
+			<p>Monday to Friday, 9 AM – 6 PM (GMT)</p>
+			<p>
+				We aim to respond to all inquiries within 24 hours.
+				<a href="contact.html">Contact us here</a>.
+			</p>
+		</main>
+
+		<script src="cart.js">
+			const faqItems = document.querySelectorAll(".faq-item");
+
+			faqItems.forEach((item) => {
+				item.addEventListener("click", () => {
+					item.classList.toggle("open");
+				});
+			});
+		</script>
+	</body>
 </html>

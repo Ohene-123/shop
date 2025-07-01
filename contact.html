@@ -1,38 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact</title>
-  <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-  <header>
-    <h1>SHOP AKUA</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="shop.html">Shop</a>
-        <a href="help.html">help</a>
-      </nav>
-  </header>
-  <main>
-    <div class="container">
-      <h2>Contact the Owner</h2>
-      <div class="owner-info">
-        <img src="owner.jpg" alt="Owner Photo" class="owner-photo" />
-        <p><strong>Name:</strong> Jane Doe</p>
-        <p><strong>Email:</strong> <a href="mailto:jane@example.com">jane@example.com</a></p>
-        <p><strong>Phone:</strong> (123) 456-7890</p>
-        <p><strong>Location:</strong> San Francisco, CA, USA</p>
-        <div class="social-links">
-          <a href="https://facebook.com/in/janedoe" target="_blank">Facebook</a> |
-          <a href="https://github.com/janedoe" target="_blank">GitHub</a> |
-          <a href="https://twitter.com/janedoe" target="_blank">Twitter</a>
-        </div>
-      </div>
-    </div>
-  </main>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contact - SHOP AKUA</title>
+		<link rel="stylesheet" href="styles.css" />
+		<style>
+			main {
+				padding: 4rem 2rem;
+				max-width: 1100px;
+				margin: 0 auto;
+			}
+			h2 {
+				font-size: 2rem;
+				margin-bottom: 1.5rem;
+				color: #fff;
+				border-bottom: 1px solid #2a2a2a;
+				padding-bottom: 0.5rem;
+			}
+			.section {
+				margin-bottom: 3rem;
+			}
+			.owner-section {
+				display: flex;
+				gap: 2rem;
+				align-items: flex-start;
+				flex-wrap: wrap;
+			}
+			.owner-photo {
+				width: 140px;
+				height: 140px;
+				object-fit: cover;
+				filter: grayscale(100%) brightness(0.85);
+				border: 1px solid #444;
+			}
+			.owner-details p,
+			.contact-form p {
+				margin: 0.5rem 0;
+				color: #ccc;
+			}
+			a {
+				color: #7da3ff;
+				text-decoration: none;
+			}
+			form {
+				display: grid;
+				gap: 1rem;
+				margin-top: 1rem;
+			}
+			input,
+			textarea {
+				background-color: #1f1f1f;
+				border: 1px solid #333;
+				color: #eee;
+				padding: 0.75rem;
+				font-size: 1rem;
+				width: 100%;
+			}
+			button {
+				background-color: #2e80f9;
+				color: #fff;
+				border: none;
+				padding: 0.8rem 1.2rem;
+				font-size: 1rem;
+				cursor: pointer;
+				transition: background 0.2s;
+			}
+			button:hover {
+				background-color: #1a64d6;
+			}
+			iframe {
+				border: 0;
+				width: 100%;
+				height: 300px;
+				margin-top: 1rem;
+			}
+			.social-links {
+				margin-top: 0.5rem;
+			}
+			.social-links a {
+				margin-right: 1rem;
+				color: #999;
+			}
+			.support-hours p {
+				margin: 0.3rem 0;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<a href="index.html" class="title">
+				<h1>SHOP AKUA</h1>
+			</a>
+			<nav>
+				<a href="index.html">Home</a>
+				<a href="shop.html">Shop</a>
+				<a href="about.html">About</a>
+				<a href="contact.html">Contact</a>
+				<a href="help.html">Help</a>
+				<a href="cart.html" class="cart-link"
+					>🛒 Cart (<span id="cart-count">0</span>)</a
+				>
+			</nav>
+		</header>
+
+		<main>
+			<section class="section">
+				<h2>Contact the Owner</h2>
+				<div class="owner-section">
+					<img
+						src="owner.jpg"
+						alt="Owner Photo"
+						class="owner-photo"
+					/>
+					<div class="owner-details">
+						<p><strong>Name:</strong> Jane Doe</p>
+						<p>
+							<strong>Email:</strong>
+							<a href="mailto:jane@example.com"
+								>jane@example.com</a
+							>
+						</p>
+						<p><strong>Phone:</strong> (123) 456-7890</p>
+						<p><strong>Location:</strong> San Francisco, CA, USA</p>
+						<div class="social-links">
+							<a
+								href="https://facebook.com/in/janedoe"
+								target="_blank"
+								>Facebook</a
+							>
+							<a href="https://github.com/janedoe" target="_blank"
+								>GitHub</a
+							>
+							<a
+								href="https://twitter.com/janedoe"
+								target="_blank"
+								>Twitter</a
+							>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>Send a Message</h2>
+				<form>
+					<input type="text" placeholder="Your Name" required />
+					<input type="email" placeholder="Your Email" required />
+					<textarea
+						rows="5"
+						placeholder="Your Message"
+						required
+					></textarea>
+					<button type="submit">Send Message</button>
+				</form>
+			</section>
+
+			<section class="section">
+				<h2>Our Location</h2>
+				<!-- <iframe
+					src="https://maps.google.com/maps?q=San%20Francisco&t=&z=13&ie=UTF8&iwloc=&output=embed"
+					allowfullscreen
+				></iframe> -->
+			</section>
+
+			<section class="section support-hours">
+				<h2>Support Hours</h2>
+				<p>Monday – Friday: 9am to 6pm</p>
+				<p>Saturday: 10am to 4pm</p>
+				<p>Sunday & Holidays: Closed</p>
+			</section>
+
+			<section class="section">
+				<h2>Need Help?</h2>
+				<p>
+					Check our <a href="help.html">Help Center</a> for FAQs and
+					common issues before reaching out directly.
+				</p>
+			</section>
+		</main>
+	</body>
 </html>
